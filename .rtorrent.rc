@@ -2,23 +2,23 @@ session = /torrents/.rtorrent
 group.seeding.ratio.enable=yes
 ratio.min.set=100
 ratio.max.set=110
-#schedule = throttle_1,06:00:00,22:00:00,upload_rate=30
-#schedule = throttle_2,00:00:00,05:59:00,upload_rate=500
-#schedule = throttle_3,22:01:00,23:59:00,upload_rate=30
+schedule = throttle_1,06:00:00,22:00:00,upload_rate=60
+schedule = throttle_2,00:00:00,05:59:00,upload_rate=0
+schedule = throttle_3,22:01:00,23:59:00,upload_rate=60
 
-throttle.global_up.max_rate.set_kb = 30
-throttle.global_down.max_rate.set_kb = 5000
+throttle.global_up.max_rate.set_kb = 60
+throttle.global_down.max_rate.set_kb = 8000
 
 directory.default.set = /downloads/incomplete_downloads/
 
 throttle.min_peers.normal.set = 1
 throttle.max_peers.normal.set = 20
-
+	
 # Same as above but for seeding completed torrents (-1 = same as downloading)
 throttle.min_peers.seed.set = -1
 throttle.max_peers.seed.set = 10
 
-throttle.max_uploads.set = 15
+throttle.max_uploads.set = 17
 
 schedule = watch_directory_1,10,10,"load.start=/torrents/tv/*.torrent,d.custom1.set=/downloads/completed_downloads/tv/"
 schedule = watch_directory_2,10,10,"load.start=/torrents/movies/*.torrent,d.custom1.set=/downloads/completed_downloads/movies/"
